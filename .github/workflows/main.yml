@@ -19,12 +19,15 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Build APK
         working-directory: corrida99
         run: |
-          gradle wrapper
+          gradle wrapper --gradle-version 8.9
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --warning-mode=none
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
