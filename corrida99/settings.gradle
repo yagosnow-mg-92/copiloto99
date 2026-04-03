@@ -1,0 +1,2 @@
+rootProject.name = "Corrida99"
+include ':app'

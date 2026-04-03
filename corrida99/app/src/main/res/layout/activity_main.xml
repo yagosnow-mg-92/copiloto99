@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a1a2e">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🚗 Copiloto 99"
+            android:textColor="#ffffff"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Análise automática de corridas"
+            android:textColor="#aaaaaa"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="30dp" />
+
+        <!-- Card de Status -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#16213e"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="STATUS DO SERVIÇO"
+                android:textColor="#aaaaaa"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚪ Acessibilidade desativada"
+                android:textColor="#ff6b6b"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvOverlayStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚪ Permissão de overlay pendente"
+                android:textColor="#ff6b6b"
+                android:textSize="15sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Configurações de limites -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#16213e"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SEUS LIMITES MÍNIMOS"
+                android:textColor="#aaaaaa"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="R$/KM mínimo"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etMinKm"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:inputType="numberDecimal"
+                    android:text="2.50"
+                    android:textColor="#ffffff"
+                    android:background="#0f3460"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="R$/hora mínimo"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etMinHora"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:inputType="numberDecimal"
+                    android:text="25.00"
+                    android:textColor="#ffffff"
+                    android:background="#0f3460"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Avaliação mínima do passageiro"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/etMinAvaliacao"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:inputType="numberDecimal"
+                    android:text="4.5"
+                    android:textColor="#ffffff"
+                    android:background="#0f3460"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Última corrida detectada -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#16213e"
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ÚLTIMA CORRIDA DETECTADA"
+                android:textColor="#aaaaaa"
+                android:textSize="11sp"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="#0f3460"
+                    android:padding="12dp"
+                    android:layout_marginEnd="4dp">
+
+                    <TextView
+                        android:id="@+id/tvKmValor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="—"
+                        android:textColor="#00d4aa"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R$/KM"
+                        android:textColor="#aaaaaa"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="#0f3460"
+                    android:padding="12dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp">
+
+                    <TextView
+                        android:id="@+id/tvHoraValor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="—"
+                        android:textColor="#00d4aa"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R$/HORA"
+                        android:textColor="#aaaaaa"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="#0f3460"
+                    android:padding="12dp"
+                    android:layout_marginStart="4dp">
+
+                    <TextView
+                        android:id="@+id/tvAvaliacaoValor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="—"
+                        android:textColor="#ffd700"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AVALIAÇÃO"
+                        android:textColor="#aaaaaa"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvVeredicto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aguardando corrida..."
+                android:textColor="#aaaaaa"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_marginTop="12dp" />
+        </LinearLayout>
+
+        <!-- Botões de ação -->
+        <Button
+            android:id="@+id/btnAcessibilidade"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Ativar Acessibilidade"
+            android:backgroundTint="#00d4aa"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Permitir Overlay (bolinha flutuante)"
+            android:backgroundTint="#0f3460"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnSalvar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Salvar Configurações"
+            android:backgroundTint="#16213e"
+            android:textColor="#00d4aa"
+            android:layout_marginBottom="20dp" />
+
+    </LinearLayout>
+</ScrollView>
